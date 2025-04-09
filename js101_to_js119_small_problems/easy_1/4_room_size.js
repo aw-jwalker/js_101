@@ -13,14 +13,14 @@ function prompt(phrase) {
   return rls.question(phrase)
 }
 
-let sqMetersToFeet = 10.7639;
-let length = prompt('Enter the length of the room in meters: ');
-let width = prompt('Enter the width of the room in meters: ');
+const SQMETERS_TO_SQFEET = 10.7639;
+let length = parseInt(prompt('Enter the length of the room in meters: '));
+let width = parseInt(prompt('Enter the width of the room in meters: '));
 
 let areaMeters = length * width;
-let areaFeet = sqMetersToFeet * areaMeters;
+let areaFeet = SQMETERS_TO_SQFEET * areaMeters;
 
-console.log('The area of the room in square meters: ' + areaMeters);
-console.log('The area of the room in square feet: ' + areaFeet);
+console.log('The area of the room in square meters: ' + areaMeters.toFixed(2));
+console.log('The area of the room in square feet: ' + areaFeet.toFixed(2) ;
 
 
