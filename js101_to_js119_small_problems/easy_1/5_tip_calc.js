@@ -7,12 +7,12 @@ function prompt(phrase) {
 }
 
 function tipCalc() {
-  let bill = Number(prompt("enter bill amount ($): "));
-  let rate = (Number(prompt("enter tip rate (%): ")))/100;
+  let bill = parseFloat(prompt("enter bill amount ($): "));
+  let rate = (parseFloat(prompt("enter tip rate (%): ")))/100;
   let tip = bill * rate;
   let total = bill + tip;
 
-  console.log(`The tip is \$${tip}, the bill total is \$${total}.`);
+  console.log(`The tip is \$${tip.toFixed(2)}, the bill total is \$${total.toFixed(2)} );
 }
 
 tipCalc();
