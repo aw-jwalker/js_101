@@ -14,10 +14,13 @@ function multisum (number) {
     if (isMultiple(i, 3) || isMultiple(i, 5)) {
       total += i;
     }
+
   }
+
+  return total;
 }
 
-multisum(3);       // 3
-multisum(5);       // 8
-multisum(10);      // 33
-multisum(1000);    // 234168
+console.log(multisum(3));       // 3
+console.log(multisum(5));       // 8
+console.log(multisum(10));      // 33
+console.log(multisum(1000));    // 234168
