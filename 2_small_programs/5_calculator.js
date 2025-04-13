@@ -1,6 +1,7 @@
 /* Ask the user for two numbers.
 Ask the user for the type of operation to perform: add, subtract, multiply or divide.
 Perform the calculation and display the result. */
+let msgs = require('./5_calculator_messages.json');
 
 function prompt(phrase) {
   let rls = require('readline-sync')
@@ -8,17 +9,17 @@ function prompt(phrase) {
 }
 
 function getNumber() {
-  let num = prompt('enter a number: ');
+  let num = prompt(msgs.enterNum);
   while (invalidNumber(num)) {
-    num = prompt('error! enter a valid number: ');
+    num = prompt(msgs.invalidNum);
   }
   return num;
 }
 
 function getOperator() {
-  let operator = prompt('operator:\n (+) (-) (*) (/): ');
+  let operator = prompt(msgs.enterOperator);
   while (invalidOperator(operator)) {
-    operator = prompt('error! enter a valid operator:\n (+) (-) (*) (/): ');
+    operator = prompt(msgs.invalidOperator);
   }
   return operator;
 }
@@ -33,35 +34,45 @@ function invalidOperator(operator) {
 }
 
 function launchCalc() {
-  console.log('Welcome to the Calculator!');
-  let num1 = getNumber();
-  let num2 = getNumber()
-  let operator = getOperator();
+  console.log(msgs.welcome);
+  let num1;
+  let num2;
+  let operator;
+  let output;
+  let keepGoing = 'y';
 
-  function calc(num1, num2, operator) {
-    let output;
-    switch (operator) {
-      case '+':
-        output = num1 + num2;
-        break;
-      case '-':
-        output = num1 - num2;
-        break;
-      case '*':
-        output = num1 * num2;
-        break;
-      case '/':
-        output = num1 / num2;
-        break;
-      default:
-        output = 'error';
-        break;
+  while (keepGoing === 'y') {
+    num1 = getNumber();
+    num2 = getNumber();
+    operator = getOperator();
+
+    function calc(num1, num2, operator) {
+      output = 0;
+      switch (operator) {
+        case '+':
+          output = num1 + num2;
+          break;
+        case '-':
+          output = num1 - num2;
+          break;
+        case '*':
+          output = num1 * num2;
+          break;
+        case '/':
+          output = num1 / num2;
+          break;
+        default:
+          output = 'error';
+          break;
+      }
+
+      return output;
     }
-
-    return output;
+    console.log(msgs.result + calc(num1, num2, operator));
+    keepGoing = prompt(msgs.continue);
   }
 
-  console.log('The result is: ' + calc(num1, num2, operator));
+  console.log(msgs.goodbye)
 }
 
 launchCalc();

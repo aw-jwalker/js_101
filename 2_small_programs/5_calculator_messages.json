@@ -1,0 +1,10 @@
+{
+  "welcome": "welcome to the calculator!",
+  "invalidNum": "error! enter a valid number: ",
+  "invalidOperator": "error! enter a valid operator",
+  "goodbye": "goodbye",
+  "result": "=> result: ",
+  "continue": "=> keep going |y|n|: ",
+  "enterNum": "enter a number: ",
+  "enterOperator": "enter an operator |+|-|*|/|: "
+}
