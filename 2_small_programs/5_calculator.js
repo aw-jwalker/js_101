@@ -75,4 +75,3 @@ function launchCalc() {
   console.log(msgs.goodbye)
 }
 
-launchCalc();
