@@ -1,4 +1,5 @@
-function factors(number) {
+// refactor this code to handle 0 and negative numbers
+/* function factors(number) {
   let divisor = number;
   let factors = [];
   do {
@@ -11,7 +12,7 @@ function factors(number) {
 }
 
 console.log(factors(36));
-
+ */
 function findFactors(number) {
 
   let factors = [];
