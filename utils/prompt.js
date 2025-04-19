@@ -1,5 +1,5 @@
 import readline from 'readline-sync';
 
-function prompt(phrase) {
+export function prompt(phrase) {
   return readline.question(phrase);
 }
